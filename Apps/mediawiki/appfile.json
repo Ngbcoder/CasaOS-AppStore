@@ -1,0 +1,130 @@
+{
+	"version": "2.0",
+	"title": "MediaWiki",
+	"name": "mediawiki",
+	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/icon.png",
+	"tagline": "The free and open-source wiki software.",
+	"overview": "MediaWiki is a free and open-source wiki software. It is used by Wikipedia and almost all other Wikimedia projects, and many other wikis, including Miraheze, Fandom, and numerous independent wikis. It is written in PHP and backed by a relational database.",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/thumbnail.png",
+	"screenshots": [
+		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-2.png",
+		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-3.png"
+	],
+	"category": [
+		"Productivity",
+		"Tools"
+	],
+	"developer": {
+		"name": "The MediaWiki community",
+		"website": "https://www.mediawiki.org/wiki/MediaWiki",
+		"donate_text": "Donate",
+		"donate_link": "https://donate.wikimedia.org/"
+	},
+	"adaptor": {
+		"name": "ngbcoder",
+		"website": "",
+		"donate_text": "",
+		"donate_link": ""
+	},
+	"support": "https://www.mediawiki.org/wiki/Support",
+	"website": "https://www.mediawiki.org/wiki/MediaWiki",
+	"container": {
+		"image": "mediawiki:latest",
+		"shell": "bash",
+		"privileged": false,
+		"network_model": "bridge",
+		"web_ui": {
+			"http": "80",
+			"path": "/"
+		},
+		"health_check": {
+			"url": "/",
+			"interval": "5m",
+			"timeout": "10s",
+			"retries": 3
+		},
+		"envs": [
+			{
+				"name": "MEDIAWIKI_DB_HOST",
+				"default": "mariadb",
+				"description": "Database host"
+			},
+			{
+				"name": "MEDIAWIKI_DB_USER",
+				"default": "mediawiki",
+				"description": "Database user"
+			},
+			{
+				"name": "MEDIAWIKI_DB_PASSWORD",
+				"default": "your_database_password",
+				"description": "Database password"
+			},
+			{
+				"name": "MEDIAWIKI_DB_NAME",
+				"default": "mediawiki",
+				"description": "Database name"
+			}
+		],
+		"ports": [
+			{
+				"container": "80",
+				"host": "8081",
+				"type": "tcp",
+				"allocation": "user",
+				"configurable": "yes",
+				"description": "Web UI Port"
+			}
+		],
+		"volumes": [
+			{
+				"container": "/var/www/html",
+				"host": "/DATA/AppData/$AppID/data",
+				"mode": "rw",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": "Data Directory"
+			},
+			{
+				"container": "/etc/mediawiki/LocalSettings.php",
+				"host": "/DATA/AppData/$AppID/config/LocalSettings.php",
+				"mode": "rw",
+				"allocation": "automatic",
+				"configurable": "no",
+				"description": "Configuration File"
+			}
+		],
+		"devices": [],
+		"constraints": {
+			"min_memory": 256,
+			"min_storage": 512
+		},
+		"restart_policy": "always",
+		"sysctls": [],
+		"cap_add": [],
+		"labels": {
+			"org.opencontainers.image.authors": "The MediaWiki community",
+			"org.opencontainers.image.source": "https://phabricator.wikimedia.org/diffusion/EMW/"
+		},
+		"host_name": "mediawiki",
+		"cmd": []
+	},
+	"abilities": {
+		"notification": false,
+		"widgets": false,
+		"authentication": false,
+		"search": true,
+		"upnp": false
+	},
+	"tips": {
+		"before_install": [
+			"You will need a separate database service (like MariaDB or PostgreSQL) running and accessible for MediaWiki to function correctly. Ensure you have the database host, user, password, and database name ready.",
+			"Consider configuring PHP memory limits and upload size limits in the `php.ini` file for handling larger files."
+		]
+	},
+	"changelog": {
+		"latest_updates": "https://www.mediawiki.org/wiki/Release_notes",
+		"url": "https://www.mediawiki.org/wiki/Release_notes"
+	},
+	"latest_update_date": "2024-10-20"
+}
