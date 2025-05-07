@@ -3,7 +3,7 @@
 # Access via "http://localhost:8080"
 services:
   mediawiki:
-    image: mediawiki
+    image: mediawiki:1.43.1
     restart: always
     ports:
       - 8080:80
