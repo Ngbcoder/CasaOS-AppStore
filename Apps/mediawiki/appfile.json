@@ -2,7 +2,7 @@
 	"version": "2.0",
 	"title": "MediaWiki",
 	"name": "mediawiki",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/icon.png",
+	"icon": "https://github.com/Ngbcoder/CasaOS-AppStore/blob/main/Apps/mediawiki/logo.png",
 	"tagline": "The free and open-source wiki software.",
 	"overview": "MediaWiki is a free and open-source wiki software. It is used by Wikipedia and almost all other Wikimedia projects, and many other wikis, including Miraheze, Fandom, and numerous independent wikis. It is written in PHP and backed by a relational database.",
 	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/thumbnail.png",
