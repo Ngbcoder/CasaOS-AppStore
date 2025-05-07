@@ -7,9 +7,7 @@
 	"overview": "MediaWiki is a free and open-source wiki software. It is used by Wikipedia and almost all other Wikimedia projects, and many other wikis, including Miraheze, Fandom, and numerous independent wikis. It is written in PHP and backed by a relational database.",
 	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-2.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MediaWiki/screenshot-3.png"
+		"https://github.com/Ngbcoder/CasaOS-AppStore/blob/main/Apps/mediawiki/screenshot-1.png",
 	],
 	"category": [
 		"Productivity",
